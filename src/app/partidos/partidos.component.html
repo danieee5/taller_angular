@@ -1,0 +1,44 @@
+<div *ngIf="isLoading" class="text-center mt-5">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Cargando...</span>
+  </div>
+</div>
+
+<div *ngIf="error" class="alert alert-danger">
+  Error al cargar los partidos. Intenta nuevamente.
+</div>
+
+<div *ngIf="!isLoading && !error">
+  <h2 class="text-center mb-4">Partidos de Fútbol</h2>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <div class="list-group">
+        <button 
+          *ngFor="let match of matches"
+          (click)="selectMatch(match)"
+          class="list-group-item list-group-item-action"
+          [class.active]="selectedMatch?.id === match.id"
+        >
+          {{ match.equipoLocal }} vs {{ match.equipoVisitante }}
+          <span class="badge bg-primary float-end">{{ match.fecha }}</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="col-md-6" *ngIf="selectedMatch">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          Detalle del Partido
+        </div>
+        <div class="card-body">
+          <h4 class="text-center">
+            {{ selectedMatch.equipoLocal }} {{ selectedMatch.golesLocal }} - 
+            {{ selectedMatch.golesVisitante }} {{ selectedMatch.equipoVisitante }}
+          </h4>
+          <!-- Más detalles aquí -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
