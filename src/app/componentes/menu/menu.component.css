@@ -1,0 +1,13 @@
+.menu-bg {
+  background-color: #EFEEEA;
+}
+
+.nav-link {
+  color: #000000;
+  font-weight: 500;
+}
+
+.nav-link.active {
+  color: #FE7743;
+  text-decoration: underline;
+}

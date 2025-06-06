@@ -1,13 +1,9 @@
-import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
-import { appRoutes } from './app.routes';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// para usar-activar rutas definidas en routes ts
 
-export const appConfig: ApplicationConfig = {
-  providers: [
-    provideRouter(appRoutes),
-    provideHttpClient(), // necesario parael servicio de partidos
-    NgbModule
-  ]
+import { provideRouter } from '@angular/router';
+import { appRoutes } from './app.routes';
+
+// constante que contiene lista de rutas
+export const appConfig = {
+  providers: [provideRouter(appRoutes)],
 };

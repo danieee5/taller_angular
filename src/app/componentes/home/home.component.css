@@ -1,0 +1,13 @@
+.carousel-inner img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.btn-warning {
+  background-color: #FE7743;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #e6632c;
+}
