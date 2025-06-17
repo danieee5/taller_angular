@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core'; //este servicio se puede inyectar en otros lugares
-
-//para concetarme a una URL, neceito modulo HttpClient para hacerle peticiones
 import { HttpClient } from '@angular/common/http';
-
-// peticiones en internet suelen tardar
 import { Observable } from 'rxjs'; //maneja cosas que toman tiempo y todavia no llegan, las llama luego y le digo de que forma (con la interfaz)
 import { Partido } from '../modelo/partido'; //importar interfaz que va a leer par que sepa com deben verse
+import { CommonModule } from '@angular/common'; //importar modulo comun para que funcione el httpClient
+
 
 @Injectable({
   providedIn: 'root' //esta disponible para tooda la app

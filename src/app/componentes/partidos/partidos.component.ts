@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'; //on init: cuando se cargue, trae los datos
 import { PartidosService } from '../../servicios/partidos.service'; 
+import { CommonModule } from '@angular/common'; //importar modulo comun para que funcione el httpClient
 import { Partido } from '../../modelo/partido'; //importar interfaz
 // '..' subir una carpeta sucesivamente
  
@@ -7,8 +8,14 @@ import { Partido } from '../../modelo/partido'; //importar interfaz
 @Component({
   selector: 'app-partidos',
   templateUrl: './partidos.component.html',
-  styleUrls: ['./partidos.component.css']
+  styleUrls: ['./partidos.component.css'],
+  imports: [CommonModule]
 })
+
+
+
+
+
 
 export class PartidosComponent implements OnInit {
   partidosLista: Partido[] = []; //variable para guardar datos que rcibo desde el servicio
